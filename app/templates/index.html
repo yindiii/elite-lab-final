@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+{% block title %}My Home Page{% endblock %}
+{% block content %}
+
+<div class="row">
+  <div class="col hero-section justify-content-center align-items-middle">
+    <div class="hero-section">
+      <img src="/static/img/splash.jpg">
+      <div class="text-overlay">
+        <!-- Feel free to change this -->
+        <h1>Welcome to my Site!</h1>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row hero-under-banner">
+  <div class="col">
+    <div class="container" style="max-width: 800px;">
+      <div class="row align-items-center" style="min-height: 40px;">
+        <div class="col-sm-4 text-pad">
+          Your Name
+        </div>
+        <div class="col-sm-4 text-pad">
+          me@gmail.com
+        </div>
+        <div class="col-sm-4 text-pad">
+          Los Angeles, CA
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container page-content-container" style="margin-top: 40px;">
+  <div class="row">
+    <div class="col blurb-section">
+      <p>This is a blurb of my site.</p>
+      <p>Describe a short bit about yourself and why you made this site.</p>
+      <p>Encourage people to check out the chat app feature!</p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col section-header">
+      Projects
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <!-- Project 1 -->
+      <div class="container section-content">
+        <div class="row">
+          <div class="col section-content-header">
+            Project 1
+          </div>
+        </div>
+        <div class="row">
+          <div class="col time-span">
+            Aug 2020 - Present
+          </div>
+        </div>
+        <div class="row">
+          <div class="col section-content-inner">
+            <p>Here is what I did for this project</p>
+            <p>Here are some action steps I took</p>
+            <ul>
+              <li class="main-li">I planned this out</li>
+              <li class="sub-li">Step 1</li>
+              <li class="sub-li">Step 2</li>
+              <li class="main-li">I executed this</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="container section-content">
+        <div class="row">
+          <div class="col section-content-header">
+            Project 2
+          </div>
+        </div>
+        <div class="row">
+          <div class="col time-span">
+            Aug 2019 - Jan 2020
+          </div>
+        </div>
+        <div class="row">
+          <div class="col section-content-inner">
+            <p>Here is what I did for this project</p>
+            <p>Here are some action steps I took</p>
+            <ul>
+              <li class="main-li">I planned this out</li>
+              <li class="sub-li">Step 1</li>
+              <li class="sub-li">Step 2</li>
+              <li class="main-li">I executed this</li>
+            </ul>
+          </div>
+        </div>
+      </div><!-- Project 3 -->
+      <div class="container section-content">
+        <div class="row">
+          <div class="col section-content-header">
+            Project 3
+          </div>
+        </div>
+        <div class="row">
+          <div class="col time-span">
+            Sept 2018 - June 2019
+          </div>
+        </div>
+        <div class="row">
+          <div class="col section-content-inner">
+            <p>Here is what I did for this project</p>
+            <p>Here are some action steps I took</p>
+            <ul>
+              <li class="main-li">I planned this out</li>
+              <li class="sub-li">Step 1</li>
+              <li class="sub-li">Step 2</li>
+              <li class="main-li">I executed this</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 40px;">
+    <div class="col section-header">
+      Interests
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div class="container section-content">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front interest-img-holder">
+                  <img src="/static/img/interest-1.jpg">
+                </div>
+                <div class="flip-card-back">
+                  <div>
+                    <h3>Activity 1</h3>
+                    <p>Some stuff about this activity</p>
+                    <a href="https://www.reddit.com">Some resource about it</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front interest-img-holder">
+                  <img src="/static/img/interest-2.jpg">
+                </div>
+                <div class="flip-card-back">
+                  <div>
+                    <h3>Activity 2</h3>
+                    <p>Some stuff about this activity</p>
+                    <a href="https://www.reddit.com">Some resource about it</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="flip-card">
+              <div class="flip-card-inner">
+                <div class="flip-card-front interest-img-holder">
+                  <img src="/static/img/interest-3.jpg">
+                </div>
+                <div class="flip-card-back">
+                  <div>
+                    <h3>Activity 3</h3>
+                    <p>Some stuff about this activity</p>
+                    <a href="https://www.reddit.com">Some resource about it</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+{% block footer %}
+<div class="footer-container">
+  <div class="container page-content-container">
+    <div class="row">
+      <div class="col-sm-6 contact-me-text">
+        Contact Me
+      </div>
+      <div class="col-sm-6 contact-icons">
+        <div>
+          <img src="/static/img/contact-icons/phoneicon.png">
+          <span class="contact-info">XXX-XXX-XXXX</span>
+        </div>
+        <div>
+          <img src="/static/img/contact-icons/gmail.png">
+          <span class="contact-info">someone@gmail.com</span>
+        </div>
+        <div>
+          <a href="https://www.linkedin.com">
+            <img src="/static/img/contact-icons/linkedin.png">
+            <span class="contact-info">linkedin.com/in/someone</span>
+          </a>
+        </div>
+        <div>
+          <a href="https://www.instagram.com">
+            <img src="/static/img/contact-icons/insta.jpg">
+            <span class="contact-info">@whoiam</span>
+          </a>
+        </div>
+        <div>
+          <a href="https://www.facebook.com">
+            <img src="/static/img/contact-icons/facebook.png">
+            <span class="contact-info">facebook.com/someone</span>
+          </a>
+        </div>
+        <div>
+          <a href="https://www.github.com">
+            <img src="/static/img/contact-icons/github.png">
+            <span class="contact-info">github.com/somone</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

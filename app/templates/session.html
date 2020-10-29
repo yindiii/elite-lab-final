@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container chat-content">
+  <div class="row">
+    <div class="col">
+      <h1>Set Username</h1>
+
+      <form class="input-group mb-3" id="username-input">
+        <input type="text" class="form-control" placeholder="Your Username">
+        <div class="input-group" style="margin-top: 20px;">
+          <input type="submit" class="btn btn-outline-secondary" value="Enter Channel" />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript" src="/static/js/session.js"></script>
+{% endblock %}

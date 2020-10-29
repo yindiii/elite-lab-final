@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container chat-content">
+  <div class="row">
+    <div class="col">
+      <h2 class="chat-title">{{channel_name}}</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div id="chat-window">
+        <ul id="message-list" class="container">
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="row" style="margin-top: 10px;">
+    <div class="col">
+      <form class="input-group mb-3" id="message-input">
+        <input type="text" class="form-control" placeholder="">
+        <div class="input-group-append">
+          <input type="submit" class="btn btn-outline-secondary" value="Send" />
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top: 10px;">
+    <div class="col">
+      <div class="row" id="share-row">
+        <div class="col">
+          <button class="btn btn-secondary align-top" id="start-share-button">Get Invite Link</button>
+        </div>
+      </div>
+      <div class="row" id="expanded-share-row" style="display: none;">
+        <div class="col">
+          <div class="input-group">
+            <input type="text" id="share-url" rows="1" cols="35" class="align-text-middle"/>
+            <button id="copy-share-url-button" type="button" class="btn btn-secondary align-top input-group-append">Copy Share Link</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+{% block scripts %}
+<script type="text/javascript">
+  var chatID = {{ data.id }};
+</script>
+<script type="text/javascript" src="/static/js/chat.js"></script>
+{% endblock %}
