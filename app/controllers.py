@@ -12,7 +12,7 @@ def index():
     """
     Home page
     """
-    return render_template('index.html')
+    return render_template('index.html', title="Home Page")
 
 
 @app.route('/session-start/', methods=['GET', 'POST'])
@@ -46,7 +46,7 @@ def chat_page(chat_hash):
     chat = ChatManager.get_chat_from_hash(chat_hash)
     data = { 'id': chat.id }
     if chat:
-        return render_template('channel.html', channel_name=chat.name, data=data)
+        return render_template('channel.html', channel_name=chat.name, data=data, title="channel")
     else:
         return render_template('channel_not_found.html')
 
