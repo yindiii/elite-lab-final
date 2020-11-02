@@ -105,11 +105,9 @@ You will be editing these files:
 * `app/models.py`
 
 ### Context
-If you have finished Lab 6, you can copy that solution for the first goal.
+The first goal will require you to write the model class. Please use the other model classes as a reference (it will show you how to define your fields).
 
-The second goal will require you to write the model class. Please use the other model classes as a reference (it will show you how to define your fields).
-
-We have also provided `scripts/util.py` that you can run in the command line. This script can help insert test messages into your database and also delete all messages (so you can start fresh if need be). This is to help you out, but not needed for completion.
+If you have finished Lab 6, you can copy that solution for the second goal.
 
 
 ## Set Up
@@ -167,8 +165,6 @@ Goal 2:
 
 * Look through `app/models.py` file and notice the manager function `SessionManager.create_session`. Notice what it takes in as an argument and what it returns.
 
-* (Optional) Run the `scripts/util.py` script to seed your database with test messages
-
 * Name your API and implement its handler function
 
 * Complete the javascript code to call that API correctly
@@ -180,9 +176,9 @@ Goal 2:
 * Open the same webpage in a different browser and check if you are still logged in as the same person
 
 Once you're finished, customize the rest of your site.
-* Make the chat text looks nicer
-* Add some background to the chatrooms
 * Add some content to the main page
+* Make the chat text look nicer
+* Add some background to the chatrooms
 
 
 ## Lab Advice
