@@ -1,7 +1,7 @@
 $(function () {
   // Backend API URLs
-  var baseUrl = 'http://127.0.0.1:5000';
-  var createSessionUrl = ""; // DEFINE HERE
+  var baseUrl = window.location.origin;
+  var createSessionUrl = baseUrl + '/session/'; // DEFINE HERE
 
   // jQuery Variables
   var $messages, $messageInput;
@@ -33,7 +33,9 @@ $(function () {
       redirectPath = '';
     }
 
-    requestBody = {}; // DEFINE HERE
+    requestBody = {
+      username: username
+    }; // DEFINE HERE
 
     $.ajax({
       type: "POST",

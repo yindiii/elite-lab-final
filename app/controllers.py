@@ -53,7 +53,22 @@ def chat_page(chat_hash):
 
 # ------------ Ajax Routes ------------ #
 
-# DEFINE YOUR CREATE TOKEN API HERE
+@app.route('/session/', methods=['POST'])
+def create_session():
+    """
+    Create a new session for the supplied username.
+
+    Request Body expected:
+    {
+        username: "myUser"
+    }
+
+    returns token to identify user's session
+    """
+    body = request.json
+    name = body['username']
+    token = SessionManager.create_session(name)
+    return {"token": token}
 
 
 @app.route('/session/<string:token>/username/', methods=['GET'])
