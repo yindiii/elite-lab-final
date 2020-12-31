@@ -76,7 +76,7 @@ class SessionManager:
 
     @staticmethod
     def create_session(username):
-        token = get_token(24)
+        token = get_token(16)
         session = Session(
             token=token,
             username=username
@@ -93,7 +93,9 @@ class SessionManager:
 
 class Chat(db.Model):
 
-    # DEFINE YOUR FIELDS HERE
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(128))
+    hash_key = db.Column(db.String(6), index=True, unique=True)
 
     # This represents the other side of the many-to-one relationship
     # This is not defined in the database, so don't worry about this

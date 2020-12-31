@@ -33,7 +33,9 @@ $(function () {
       redirectPath = '';
     }
 
-    requestBody = {}; // DEFINE HERE
+    requestBody = {
+      username: username
+    }; // DEFINE HERE
 
     $.ajax({
       type: "POST",
