@@ -65,7 +65,7 @@ class MessageManager:
 
 class Session(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    token = db.Column(db.String(16), index=True, unique=True)
+    token = db.Column(db.String(24), index=True, unique=True)
     username = db.Column(db.String(64), index=True)
 
     def __repr__(self):

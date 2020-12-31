@@ -46,7 +46,7 @@ def chat_page(chat_hash):
     chat = ChatManager.get_chat_from_hash(chat_hash)
     data = { 'id': chat.id }
     if chat:
-        return render_template('channel.html', channel_name=chat.name, data=data, title="channel")
+        return render_template('channel.html', channel_name=chat.name, data=data, title="Channel")
     else:
         return render_template('channel_not_found.html')
 
