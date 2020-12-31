@@ -93,9 +93,8 @@ class SessionManager:
 
 class Chat(db.Model):
 
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(128))
-    hash_key = db.Column(db.String(6), index=True, unique=True)
+    # Fill in your model here
+
 
     # This represents the other side of the many-to-one relationship
     # This is not defined in the database, so don't worry about this
@@ -136,7 +135,7 @@ class ChatManager:
     @staticmethod
     def get_chat_updates(chat_id, last_id):
         """
-        Get the messages in a chat that have occurred since the 
+        Get the messages in a chat that have occurred since the
         message with last_id was created
         """
         chat = Chat.query.get(chat_id)
