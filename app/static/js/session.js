@@ -1,7 +1,7 @@
 $(function () {
   // Backend API URLs
   var baseUrl = window.location.origin;
-  var createSessionUrl = ""; // DEFINE HERE
+  var createSessionUrl = baseUrl + "/session/"; // DEFINE HERE
 
   // jQuery Variables
   var $messages, $messageInput;
