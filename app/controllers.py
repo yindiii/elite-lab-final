@@ -53,7 +53,7 @@ def chat_page(chat_hash):
 
 # ------------ Ajax Routes ------------ #
 
-@app.route('/session/', methods=['POST'])
+# Fill in decorator
 def create_session():
     """
     Create a new session for the supplied username.
@@ -65,9 +65,7 @@ def create_session():
 
     returns token to identify user's session
     """
-    body = request.json
-    name = body['username']
-    token = SessionManager.create_session(name)
+    # Fill in body here
     return {"token": token}
 
 
