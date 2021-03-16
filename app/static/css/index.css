@@ -5,7 +5,13 @@
 
 /* -------- General Style -------- */
 #content {
+  /* background: #FEFEFE; */
+  z-index: -10;
+}
+
+.mask-bg {
   background: #FEFEFE;
+  z-index: 1;
 }
 
 .text-pad {
@@ -13,79 +19,9 @@
   padding-bottom: 2px;
 }
 
-/* -------- Chat Style -------- */
-
-.chat-content {
-  margin-top: 5vh;
-  padding: 20px;
-}
-
-.chat-content li {
-  color: #000;
-  font-size: 20px;
-  list-style-type: none;
-  margin: 0px auto;
-
-  margin-bottom: 10px;
-}
-
-#chat-window {
-  height: 60vh;
-  overflow-y: scroll;
-}
-
-.message-box {
-  display: inline-block;
-
-  padding: 3px 10px;
-
-  font-size: 0.9em;
-
-  font-family: Arial,
-    'Helvetica Neue',
-    Helvetica,
-    sans-serif;
-  color: #333;
-
-  border-radius: 3px;
-  border: 1px solid #000;
-}
-
-.participant-message .message-box {
-  background-color: #eeeeee;
-}
-
-.own-message .message-box {
-  text-align: right;
-  background-color: rgb(129, 202, 250);
-}
-
-.participant-message {
-  margin-left: 5%;
-  margin-right: auto;
-}
-
-.own-message {
-  text-align: right;
-  margin-right: 5%;
-  margin-left: auto;
-}
-
-.chat-title {
-  padding-bottom: 10px;
-  margin-bottom: 15px;
-
-  text-align: center;
-  border-bottom: 1px solid #000000;
-}
-
-#login-name {
-  padding-left: 2px;
-  padding-right: 2px;
-}
-
-#logout-button {
-  padding: 2px 4px;
+.mobile-pad {
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 /* -------- Index Style -------- */
@@ -93,8 +29,11 @@
   position: relative;
   text-align: center;
 
-  max-height: 80vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
+
+  height: 80vh;
 }
 
 .hero-section img {
@@ -151,8 +90,8 @@
 }
 
 .blurb-section p {
-  margin-top: 2px;
-  margin-bottom: 3px;
+  margin-top: 5px;
+  margin-bottom: 10px;
 }
 
 .section-header {
@@ -161,10 +100,12 @@
   line-height: 24px;
   font-weight: 400;
   letter-spacing: 5px;
+
+  margin-bottom: 10px;
 }
 
 .section-content {
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 .section-content-header {
@@ -214,73 +155,60 @@
 
 .interest-img-holder {
   overflow: hidden;
+  height: 300px;
 }
 
 .interest-img-holder img {
   width: 100%;
+  height: auto;
 }
 
-.flip-card {
-  font-family: 'Open Sans',
-    sans-serif;
-
-  background-color: transparent;
-  width: 100%;
-  height: 400px;
-  perspective: 1000px;
-  /* Remove this if you don't want the 3D effect */
+.award-space-bottom {
+  padding-bottom: 18px;
 }
 
-/* This container is needed to position the front and back side */
-.flip-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
+/* -------- Responsive -------- */
 
-/* Do an horizontal flip when you move the mouse over the flip box container */
-.flip-card:hover .flip-card-inner {
-  transform: rotateY(180deg);
-}
+/* Above med breakpoint */
+@media (min-width: 768px) {
 
-/* Position the front and back side */
-.flip-card-front,
-.flip-card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  -webkit-backface-visibility: hidden;
-  /* Safari */
-  backface-visibility: hidden;
-}
+  /* Add your desktop CSS here */
+  .section-header {
+    font-size: 24px;
+    line-height: 24px;
+    font-weight: 400;
+    letter-spacing: 5px;
+  }
 
-/* Style the front side (fallback if image is missing) */
-.flip-card-front {
-  background-color: #bbb;
-  color: black;
-}
+  .section-content-header {
+    font-size: 20px;
+    line-height: 24px;
+    font-style: normal;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
 
-/* Style the back side */
-.flip-card-back {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  .time-span {
+    margin-top: 3px;
 
-  background-color: #f7f7f7;
-  color: #000000;
-  transform: rotateY(180deg);
-}
+    font-size: 14px;
+    letter-spacing: 2px;
+  }
 
-.flip-card-back h3 {
-  font-family: Oswald,
-    sans-serif;
-}
+  .section-content-inner {
+    margin-top: 12px;
+    font-size: 16px;
+    line-height: 18px;
+  }
 
-.flip-card-back a {
-  color: #000000 !important;
+  .section-content {
+    padding-left: 5%;
+  }
+
+  .mobile-pad {
+    padding-top: inherit;
+    padding-bottom: inherit;
+  }
 }
 
 
@@ -311,4 +239,9 @@
 
 .contact-icons img {
   height: 20px;
+}
+
+.contact-info {
+  margin-left: 15px;
+  color: #000000 !important;
 }

@@ -1,0 +1,79 @@
+/**
+ * @file
+ * Chat page stylesheet file.
+ */
+
+/* -------- Chat Style -------- */
+
+.chat-content {
+  margin-top: 5vh;
+  padding: 20px;
+}
+
+.chat-content li {
+  color: #000;
+  font-size: 20px;
+  list-style-type: none;
+  margin: 0px auto;
+
+  margin-bottom: 10px;
+}
+
+#chat-window {
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.message-box {
+  display: inline-block;
+
+  padding: 3px 10px;
+
+  font-size: 0.9em;
+
+  font-family: Arial,
+    'Helvetica Neue',
+    Helvetica,
+    sans-serif;
+  color: #333;
+
+  border-radius: 3px;
+  border: 1px solid #000;
+}
+
+.participant-message .message-box {
+  background-color: #eeeeee;
+}
+
+.own-message .message-box {
+  text-align: right;
+  background-color: rgb(129, 202, 250);
+}
+
+.participant-message {
+  margin-left: 5%;
+  margin-right: auto;
+}
+
+.own-message {
+  text-align: right;
+  margin-right: 5%;
+  margin-left: auto;
+}
+
+.chat-title {
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+
+  text-align: center;
+  border-bottom: 1px solid #000000;
+}
+
+#login-name {
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+#logout-button {
+  padding: 2px 4px;
+}
