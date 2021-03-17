@@ -1,11 +1,9 @@
 $(function () {
   // Backend API URLs
-  var baseUrl = window.location.origin;
-  var createSessionUrl = ""; // DEFINE HERE
+  var createSessionUrl = "/sessions/";
 
   // jQuery Variables
-  var $messages, $messageInput;
-  $messages = $('#message-list');
+  var $usernameInput;
   $usernameInput = $('#username-input');
 
   $usernameInput.on('submit', function (e) {
@@ -18,7 +16,7 @@ $(function () {
   function setCookie(token) {
     console.log("Setting token to cookies: " + token);
     Cookies.set(
-      'elite-channel-token',
+      'elite-chatroom-token',
       token, {
         expires: 1 // Expires in 1 day
       });
@@ -33,7 +31,7 @@ $(function () {
       redirectPath = '';
     }
 
-    requestBody = {}; // DEFINE HERE
+    requestBody = { username: username };
 
     $.ajax({
       type: "POST",
@@ -48,7 +46,7 @@ $(function () {
         // Set a cookie with response data from the request
         setCookie(data.token);
         // Redirect us to the chatroom page, now that we have the session token set
-        window.location.replace(baseUrl + redirectPath);
+        window.location.replace(redirectPath);
       },
 
       // Callback function for if the server responds with an error

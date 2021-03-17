@@ -8,15 +8,15 @@ We have provided a starter personal portfolio site for you. It includes:
 * A sub banner section
 * Text blurb
 * Project descriptions
-* Interests (with hover flip cards)
+* Interests (with hover overlays)
 * Footer with contact info
 
 These are meant to be starters and examples for your own site. Add in your own content, reorder, restructure. Feel free to customize this as much as you want.
 
 Also, the we have provided the framework for a working chat app. This includes:
-* Create Channel Form
+* Create Chatroom Form
 * Sign in Form
-* Channel Page
+* Chatroom Page
 * Supporting backend components
 
 As always, feel free to reach out to me if you run into issues, or if there is something you want to implement, but don't know where to get started. (I always recommend looking at other sites for inspiration).
@@ -26,8 +26,8 @@ Even after this course is over, feel free to contact me for any help web dev rel
 
 ## Chat App Functional Doc
 ### Key Definitions
-* Channel refers to the frontend chatroom. For ex: `/channel/abc123/` will return the HTML page for the chatroom.
-* Chat refers to the collection of messages in the backend. For ex: `/chat/123/` is an API that will return the message data for that chat.
+* Chatroom refers to the frontend chatroom. For ex: `/chatrooms/abc123/` will return the HTML page for the chatroom.
+* Chat refers to the collection of messages in the backend. For ex: `/chats/123/` is an API that will return the message data for that chat.
 
 ### Model Components
 The chat app leverages 3 models for data storage. These are:
@@ -66,33 +66,31 @@ Keep in mind: There are some obvious security features that we skip over (for sa
 We have two typical user flows:
 
 #### User Creates Chatroom
-* User goes to the create channel page
-* Fills in the channel name and hits submit
-* User is directed to the channel page
+* User goes to the create chatroom page
+* Fills in the chatroom name and hits submit
+* User is directed to the chatroom page
 * IF the user is not currently in a session
   * Redirect them to the session create (login) form
   * User gives a username and submits
   * User is given a token that's stored in cookies
-  * User is redirected to the channel page
-* User is on the channel page, gets initial messages, and can send messages
+  * User is redirected to the chatroom page
+* User is on the chatroom page, gets initial messages, and can send messages
 
 #### User Joins Chatroom
-* User is given a link to a channel page
-* User visits channel page
+* User is given a link to a chatroom page
+* User visits chatroom page
 * IF the user is not currently in a session
   * Redirect them to the session create (login) form
   * User gives a username and submits
   * User is given a token that's stored in cookies
-  * User is redirected to the channel page
-* User is on the channel page, gets initial messages, and can send messages
+  * User is redirected to the chatroom page
+* User is on the chatroom page, gets initial messages, and can send messages
 
 
 ## Objective
 ### Task
-There are two goals:
+Your goal is to create the Chat model and perform the migration
 
-* Your goal is to create the Chat model and perform the migration
-* Your goal is to create the APIs and JS that the web page can use to create session tokens (this is the same as last week's lab and you can copy the answers)
 
 Lab is complete when you are able to succesfully:
 * Create a chatroom
@@ -100,14 +98,10 @@ Lab is complete when you are able to succesfully:
 * Send, receive, and share that chatroom
 
 You will be editing these files:
-* `app/static/js/session.js`
-* `app/controllers.py`
 * `app/models.py`
 
 ### Context
-The first goal will require you to write the model class. Please use the other model classes as a reference (it will show you how to define your fields).
-
-If you have finished Lab 6, you can copy that solution for the second goal.
+Your goal will require you to write the model class. Please use the other model classes as a reference (it will show you how to define your fields).
 
 
 ## Set Up
@@ -126,65 +120,55 @@ pip3 install -r requirements.txt
 
 * Start up your SQLite database with:
 ```
-FLASK_APP=lab-app.py python3 -m flask db init
-FLASK_APP=lab-app.py python3 -m flask db migrate -m "my first migration"
-FLASK_APP=lab-app.py python3 -m flask db upgrade
+python3 -m flask db init
+python3 -m flask db migrate -m "my first migration"
+python3 -m flask db upgrade
 ```
 
 * Spin up the local web server with:
 ```
-FLASK_APP=lab-app.py FLASK_ENV=development python3 -m flask run
+python3 -m flask run
 ```
-
-HEADS UP: Depending on your dev environment, you may want to just use `flask` directly.
-For example, instead of:
-`FLASK_APP=lab-app.py python3 -m flask db init`
-
-You would want to use:
-`FLASK_APP=lab-app.py flask db init`
 
 
 ## Lab Steps
-Goal 1:
 * Look at the docs above to see what fields you need to define in the Chat model
 
 * Put these definitions into code in `app/models.py`
 
 * Now that you've changed the model, you need to perform a migration
 
-* Prepare the migration with this command: `FLASK_APP=lab-app.py python3 -m flask db migrate -m "<Insert name of migration>"`
+* Prepare the migration with this command: `python3 -m flask db migrate -m "<Insert name of migration>"`
 
-* Run the migration with: `FLASK_APP=lab-app.py python3 -m flask db upgrade`
+* Run the migration with: `python3 -m flask db upgrade`
 
 * Confirm the migration worked by running the app and checking the site
 
-Goal 2:
-* Look through the `app/static/js/session.js` file and read the comments to learn about what it does.
+To test the app:
+* Create a chatroom
 
-* Look at the Ajax request in this file and notice what it expects in the response.
-
-* Look through `app/models.py` file and notice the manager function `SessionManager.create_session`. Notice what it takes in as an argument and what it returns.
-
-* Name your API and implement its handler function
-
-* Complete the javascript code to call that API correctly
-
-* Enter the chatroom and validate that you can start a session
+* Validate that you can start a session
 
 * Send some messages as yourself in this session
 
-* Open the same webpage in a different browser and check if you are still logged in as the same person
+* Open the same webpage in a different tab or window (but same browser) and check if you are still logged in as the same person
 
-Once you're finished, customize the rest of your site.
-* Add some content to the main page
-* Make the chat text look nicer
-* Add some background to the chatrooms
+* Get the share link at the bottom of the page and copy it
+
+* Open up a new window with an incognito tab or separate browser.
+
+* Paste the share link from earlier and log in as someone else
+
+* Send messages and verify that you can talk between different windows
+
+
+Once you're finished, customize the rest of your site (feel free to copy/paste your work from week 3 lab).
 
 
 ## Lab Advice
 * If your database goes out of sync with your schema, you can run these commands:
 ```
-FLASK_APP=lab-app.py python3 -m flask db stamp head
-FLASK_APP=lab-app.py python3 -m flask db migrate
-FLASK_APP=lab-app.py python3 -m flask db upgrade
+python3 -m flask db stamp head
+python3 -m flask db migrate
+python3 -m flask db upgrade
 ```

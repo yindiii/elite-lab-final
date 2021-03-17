@@ -1,14 +1,19 @@
 {% extends 'base.html' %}
+
+{% block styles %}
+<link type="text/css" rel="stylesheet" href="/static/css/chat.css" />
+{% endblock %}
+
 {% block content %}
 <div class="container chat-content">
   <div class="row">
     <div class="col">
-      <h1>Create a Channel</h1>
+      <h1>Create a Chat Room</h1>
       <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
-          {{ form.channel_name.label }}<br>
-          {{ form.channel_name(size=32) }}
+          {{ form.chatroom_name.label }}<br>
+          {{ form.chatroom_name(size=32) }}
         </p>
         <p>
           {{ form.submit() }}

@@ -1,0 +1,25 @@
+/**
+ * @file
+ * Main stylesheet file.
+ */
+
+/* -------- General Style -------- */
+#content {
+  /* background: #FEFEFE; */
+  z-index: -10;
+}
+
+.mask-bg {
+  background: #FEFEFE;
+  z-index: 1;
+}
+
+.text-pad {
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.mobile-pad {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

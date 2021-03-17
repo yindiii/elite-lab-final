@@ -83,7 +83,7 @@ class SessionManager:
         )
         db.session.add(session)
         db.session.commit()
-        return token
+        return session
 
     @staticmethod
     def get_username(token):
@@ -105,7 +105,7 @@ class ChatManager:
 
     @staticmethod
     def create_chat(name):
-        hash_key = get_token(6)
+        hash_key = get_token(10)
         chat = Chat(
             hash_key=hash_key,
             name=name

@@ -4,7 +4,6 @@
  */
 
 /* -------- Chat Style -------- */
-
 .chat-content {
   margin-top: 5vh;
   padding: 20px;
@@ -76,4 +75,8 @@
 
 #logout-button {
   padding: 2px 4px;
+}
+
+#username-input {
+  max-width: 600px;
 }

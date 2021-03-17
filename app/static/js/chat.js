@@ -8,12 +8,11 @@ $(function () {
   var updateLock = false;
 
   // Backend API URLs
-  var baseUrl = window.location.origin;
-  var createMessageUrl = `${baseUrl}/messages/`;
-  var refreshMessagesUrl = `${baseUrl}/chat/${chatroomID}/updates`;
-  var initMessagesUrl = `${baseUrl}/chat/${chatroomID}/last`;
-  var sessionTokenUrl = `${baseUrl}/session/`;
-  var startSessionUrl = `${baseUrl}/session-start/`;
+  var createMessageUrl = `/messages/`;
+  var refreshMessagesUrl = `/chats/${chatroomID}/updates`;
+  var initMessagesUrl = `/chats/${chatroomID}/last`;
+  var sessionTokenUrl = `/sessions/`;
+  var startSessionUrl = `/session-start/`;
 
   // jQuery Variables
   var $messages, $messageInput, $logoutButton;
@@ -72,7 +71,7 @@ $(function () {
     }, 1000);
   }
 
-  // Create new message in this channel in backend
+  // Create new message in this chatroom in backend
   function postMessage(text) {
     requestBody = {
       username: userSelf,
@@ -114,7 +113,7 @@ $(function () {
 
   // Check for token in cookies
   function getTokenFromCookie() {
-    var token = Cookies.get('elite-channel-token');
+    var token = Cookies.get('elite-chatroom-token');
     // Make sure we standardize null response
     if (!token) {
       return null;
@@ -124,7 +123,7 @@ $(function () {
 
   // Clear token from cookies
   function clearCookie() {
-    Cookies.remove('elite-channel-token');
+    Cookies.remove('elite-chatroom-token');
   }
 
   // Logic needed to load page and initial messages

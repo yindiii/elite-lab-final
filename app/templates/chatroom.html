@@ -1,10 +1,21 @@
 {% extends 'base.html' %}
 
+{% block styles %}
+<link type="text/css" rel="stylesheet" href="/static/css/chat.css" />
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+  var chatID = {{ data.id }};
+</script>
+<script type="text/javascript" src="/static/js/chat.js"></script>
+{% endblock %}
+
 {% block content %}
 <div class="container chat-content">
   <div class="row">
     <div class="col">
-      <h2 class="chat-title">{{channel_name}}</h2>
+      <h2 class="chat-title">{{chatroom_name}}</h2>
     </div>
   </div>
   <div class="row">
@@ -44,12 +55,4 @@
     </div>
   </div>
 </div>
-{% endblock %}
-
-
-{% block scripts %}
-<script type="text/javascript">
-  var chatID = {{ data.id }};
-</script>
-<script type="text/javascript" src="/static/js/chat.js"></script>
 {% endblock %}
