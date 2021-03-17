@@ -94,7 +94,7 @@ class SessionManager:
 class Chat(db.Model):
 
     # Fill in your model here
-
+    id = db.Column(db.Integer, primary_key=True)
 
     # This represents the other side of the many-to-one relationship
     # This is not defined in the database, so don't worry about this
